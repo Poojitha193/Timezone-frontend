@@ -1,0 +1,56 @@
+<div class="meeting-form-container">
+  <app-nav-sidebar [activePage]="'Schedule Meeting'"> </app-nav-sidebar>
+
+  <main class="main-content">
+    <app-top-bar [currentPage]="'Schedule Meeting'"></app-top-bar>
+
+    <div class="schedule-meeting-content">
+      <form [formGroup]="meetingForm" (ngSubmit)="onSubmit()">
+        <div class="form-field">
+          <label for="meetingTitle">Meeting Title</label>
+          <input
+            type="text"
+            id="meetingTitle"
+            formControlName="meetingTitle"
+            placeholder="Enter meeting title"
+          />
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="date">Date</label>
+            <input type="date" id="date" formControlName="date" />
+          </div>
+          <div class="form-field">
+            <label for="time">Time</label>
+            <input type="time" id="time" formControlName="time" />
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="participants">Participants</label>
+          <input
+            type="text"
+            id="participants"
+            formControlName="participants"
+            placeholder="Enter email addresses, separated by commas"
+          />
+        </div>
+
+        <div class="form-field">
+          <label for="platform">Video Conferencing Platform</label>
+          <select id="platform" formControlName="platform">
+            <option value="" disabled selected>Select a platform</option>
+            <option value="zoom">Zoom</option>
+            <option value="teams">Microsoft Teams</option>
+            <option value="meet">Google Meet</option>
+          </select>
+        </div>
+
+        <button type="submit" [disabled]="!meetingForm.valid">
+          Schedule Meeting
+        </button>
+      </form>
+    </div>
+  </main>
+</div>
