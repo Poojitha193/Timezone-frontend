@@ -31,6 +31,8 @@
           Login
         </button>
       </form>
+      <!-- Add this just below the form -->
+<p *ngIf="errorMessage" class="text-red-500 mt-2">{{ errorMessage }}</p>
     </div>
   </div>
   
