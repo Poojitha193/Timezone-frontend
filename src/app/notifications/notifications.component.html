@@ -1,0 +1,19 @@
+<div class="notifications-container">
+    <app-nav-sidebar 
+      [activePage]="'Notifications'"
+    >
+    </app-nav-sidebar>
+    <main class="main-content">
+      <app-top-bar [currentPage]="'Notifications'"></app-top-bar>
+    <div class="notifications-list">
+      <div *ngFor="let notification of notifications" class="notification-item">
+        <div class="notification-icon" [ngClass]="{'calendar-icon': notification.icon === 'calendar', 'bell-icon': notification.icon === 'bell'}"></div>
+        <div class="notification-content">
+          <div class="notification-title">{{ notification.title }}</div>
+          <div class="notification-datetime">{{ notification.datetime }}</div>
+        </div>
+        <button class="notification-close" (click)="removeNotification(notification.id)">×</button>
+      </div>
+    </div>
+    </main>
+  </div>

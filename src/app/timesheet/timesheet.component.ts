@@ -9,8 +9,9 @@ import { TopBarComponent } from '../top-bar/top-bar.component';
   standalone: true,
   imports: [CommonModule,FormsModule,NavSidebarComponent,TopBarComponent],
   templateUrl: './timesheet.component.html',
-  styleUrl: './timesheet.component.css'
+  styleUrls: ['./timesheet.component.css']
 })
+
 export class TimesheetComponent {
   startTime: string = '';
   endTime: string = '';

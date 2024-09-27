@@ -21,9 +21,11 @@ export class LoginService {
     );
   }
 
-  logout(): void {
-    localStorage.removeItem('token');
-  }
+  // logout(): void {
+  //   localStorage.removeItem('token');
+  // }
+
+ 
 
   getToken(): string | null {
     return localStorage.getItem('token');
